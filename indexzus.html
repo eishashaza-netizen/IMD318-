@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZUS Coffee</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000080;
+    min-height:100vh;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ENABLE SCROLL */
+body{
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/* GENERAL SECTION STYLE */
+section{
+    min-height:50vh;
+    padding:100px 80px;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+    color:#000080;
+    min-height:30vh;
+    padding:100px 80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+/* text side */
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:45px;
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.7;
+    max-width:600px;
+}
+
+/* image side */
+.about-img{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.about-img img{
+    width:100%;
+    max-width:800px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+.about-img img:hover{
+    transform:scale(1.05);
+}
+
+/* BEST SELLERS */
+.best{
+    background:#f4f6ff;
+    color:#000080;
+    text-align:center;
+}
+
+.best h2{
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* WHY US */
+.why{
+    background:white;
+    color:#000080;
+    text-align:center;
+}
+
+.why h2{
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+}
+
+.box{
+    background:#000080;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+}
+
+.order{
+    background:#f4f6ff;
+    color:#000080;
+    text-align:center;
+    padding:100px 80px;
+}
+
+.order h2{
+    font-size:40px;
+    margin-bottom:30px;
+}
+
+.order input{
+    padding:15px;
+    width:250px;
+    border:2px solid #000080;
+    border-radius:10px;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+/* CTA */
+.cta{
+    background:#000080;
+    color:white;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:absolute;
+    top:0;
+    width:100%;
+    padding:30px 70px;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:55px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c7dfff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    position:relative;
+    z-index:10;
+}
+
+.logo{
+    width:230px;
+    margin-bottom:20px;
+
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.hero h1{
+
+    font-family:'Cinzel',serif;
+    color:white;
+    font-size:120px;
+    letter-spacing:10px;
+    line-height:1;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.3);
+}
+
+.hero h2{
+
+    color:white;
+    font-size:28px;
+    letter-spacing:12px;
+    margin-top:5px;
+    font-weight:300;
+}
+
+.line{
+
+    width:140px;
+    height:2px;
+    background:white;
+    margin:30px auto;
+}
+
+.tagline{
+
+    color:white;
+    font-size:26px;
+    font-weight:300;
+    margin-bottom:40px;
+}
+
+.button{
+
+    text-decoration:none;
+    color:white;
+    border:2px solid white;
+    padding:16px 45px;
+    border-radius:50px;
+    transition:0.4s;
+    font-weight:500;
+}
+
+.button:hover{
+
+    background:white;
+    color:#000080;
+}
+
+/* ================= FALLING CUPS ================= */
+
+.cup{
+
+    position:absolute;
+    top:-200px;
+    width:90px;
+    z-index:1;
+    opacity:0.9;
+}
+
+.cup1{
+    left:5%;
+    animation:fall 8s linear infinite;
+}
+
+.cup2{
+    left:18%;
+    animation:fall 11s linear infinite;
+    animation-delay:2s;
+}
+
+.cup3{
+    left:35%;
+    animation:fall 7s linear infinite;
+}
+
+.cup4{
+    left:52%;
+    animation:fall 10s linear infinite;
+    animation-delay:3s;
+}
+
+.cup5{
+    left:70%;
+    animation:fall 8s linear infinite;
+}
+
+.cup6{
+    left:88%;
+    animation:fall 12s linear infinite;
+    animation-delay:1s;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:
+        translateY(-200px)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+/* ================= SCROLL INDICATOR ================= */
+
+.scroll{
+
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    text-align:center;
+    z-index:100;
+}
+
+.mouse{
+
+    width:28px;
+    height:40px;
+    border:2px solid white;
+    border-radius:20px;
+    margin:auto;
+    position:relative;
+}
+
+.mouse::before{
+
+    content:'';
+    width:4px;
+    height:10px;
+    background:white;
+
+    position:absolute;
+    top:8px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:scrollmove 1.5s infinite;
+}
+
+@keyframes scrollmove{
+
+    0%{
+        opacity:1;
+        top:8px;
+    }
+
+    100%{
+        opacity:0;
+        top:25px;
+    }
+
+}
+
+.scroll p{
+    margin-top:12px;
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<ul>
+
+<li><a href="indexzus.html">HOME</a></li>
+<li><a href="history.html">HISTORY</a></li>
+<li><a href="products.html">PRODUCTS & SERVICES</a></li>
+<li><a href="customers.html">CUSTOMERS</a></li>
+<li><a href="market.html">MARKET POSITION</a></li>
+<li><a href="branding.html">BRANDING</a></li>
+
+</ul>
+
+</nav>
+
+<!-- Falling Coffee Cups -->
+
+<img src="cup.png" class="cup cup1">
+<img src="cup.png" class="cup cup2">
+<img src="cup.png" class="cup cup3">
+<img src="cup.png" class="cup cup4">
+<img src="cup.png" class="cup cup5">
+<img src="cup.png" class="cup cup6">
+
+<!-- Hero -->
+
+<section class="hero">
+
+<img src="zuslogo.png" class="logo">
+
+<h1>ZUS</h1>
+
+<h2>COFFEE</h2>
+
+<div class="line"></div>
+
+<p class="tagline">
+A Necessity, Not A Luxury
+</p>
+
+<a href="history.html" class="button">
+EXPLORE MORE
+</a>
+
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about">
+
+    <div class="about-text">
+
+        <h2>ABOUT ZUS COFFEE</h2>
+
+        <p>
+            ZUS Coffee is a modern coffee brand built for fast-paced lifestyle.
+            We focus on delivering high-quality coffee at affordable prices while maintaining consistency in every cup.
+        </p>
+
+    </div>
+
+    <div class="about-img">
+        <img src="zuscoffee.jpg" alt="ZUS Coffee">
+    </div>
+
+</section>
+
+</section>
+
+<!-- BEST SELLERS -->
+<section class="best">
+
+    <h2>BEST SELLERS</h2>
+
+   <div class="cards">
+
+    <a href="products.html?item=Spanish%20Latte" class="card">
+        Spanish Latte
+    </a>
+
+    <a href="products.html?item=Americano" class="card">
+        Americano
+    </a>
+
+    <a href="products.html?item=Matcha%20Latte" class="card">
+        Matcha Latte
+    </a>
+
+    <a href="products.html?item=Chocolate%20Frappe" class="card">
+        Chocolate Frappe
+    </a>
+
+</div>
+</div>
+
+    </div>
+
+</section>
+
+<!-- WHY US -->
+<section class="why">
+
+    <h2>WHY CHOOSE US</h2>
+
+    <div class="why-grid">
+
+        <div class="box">Premium Beans</div>
+        <div class="box">Affordable Price</div>
+        <div class="box">Fast Service</div>
+        <div class="box">Modern Lifestyle Brand</div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>EXPERIENCE ZUS COFFEE TODAY</h2>
+
+    <p>Great coffee. Fast service. Everyday energy.</p>
+
+    <a href="products.html" class="button">ORDER NOW</a>
+
+</section>
+
+<!-- Scroll -->
+
+<div class="scroll">
+
+<div class="mouse"></div>
+
+<p>SCROLL DOWN</p>
+
+</div>
+
+</body>
+
+</html>

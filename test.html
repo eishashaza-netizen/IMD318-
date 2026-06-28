@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZUS Coffee Concept</title>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000080;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
+/* coffee animation */
+.cup {
+    position: absolute;
+    top: -50px;
+    font-size: 30px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {transform: translateY(-100px); opacity: 0;}
+    10% {opacity: 1;}
+    100% {transform: translateY(110vh); opacity: 0;}
+}
+
+.c1 {left: 10%; animation-duration: 5s;}
+.c2 {left: 30%; animation-duration: 6s;}
+.c3 {left: 50%; animation-duration: 4s;}
+.c4 {left: 70%; animation-duration: 5.5s;}
+.c5 {left: 85%; animation-duration: 6.5s;}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: white;
+    color: #000080;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: gold;
+    transform: scale(1.1);
+}
+
+/* SECTION */
+section {
+    padding: 80px 10%;
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about div {
+    flex: 1;
+}
+
+/* BEST SELLERS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+/* WHY US */
+.why {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.box {
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    padding: 60px;
+    border-radius: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero" id="home">
+
+    <div class="cup c1">☕</div>
+    <div class="cup c2">☕</div>
+    <div class="cup c3">☕</div>
+    <div class="cup c4">☕</div>
+    <div class="cup c5">☕</div>
+
+    <h1>ZUS COFFEE</h1>
+    <p>Premium Coffee Experience, Brewed Fresh Daily</p>
+
+    <a href="#about"><button class="btn">Scroll Down</button></a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+        <div>
+            <p>
+                Inspired by modern lifestyle, we deliver coffee that is fast, affordable, and premium in taste.
+                Built for people who are always on the move but never compromise on quality.
+            </p>
+        </div>
+        <div>
+            <p>
+                From espresso to signature latte, every cup is crafted with precision and passion.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section id="best">
+    <h2>Best Sellers</h2>
+    <div class="cards">
+        <div class="card">Spanish Latte</div>
+        <div class="card">Americano</div>
+        <div class="card">Matcha Latte</div>
+        <div class="card">Chocolate Frappe</div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+    <h2>Menu Categories</h2>
+    <div class="cards">
+        <div class="card">Coffee</div>
+        <div class="card">Non-Coffee</div>
+        <div class="card">Pastries</div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+    <h2>Why Choose Us</h2>
+    <div class="why">
+        <div class="box">Premium Beans</div>
+        <div class="box">Affordable Price</div>
+        <div class="box">Fast Service</div>
+        <div class="box">Modern Lifestyle Brand</div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="cta">
+        <h2>Experience ZUS Coffee Today</h2>
+        <p>Great coffee. Fast service. Everyday energy.</p>
+        <button class="btn">Order Now</button>
+    </div>
+</section>
+
+</body>
+</html>
